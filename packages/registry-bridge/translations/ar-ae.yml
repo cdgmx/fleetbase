@@ -1,0 +1,132 @@
+registry-bridge:
+  extension-name: جسر السجل
+  common:
+    install: تثبيت
+    uninstall: إلغاء التثبيت
+    approve: الموافقة
+    reject: الرفض
+    details: التفاصيل
+    about: حول
+    about-extension: حول {extensionName}
+  component:
+    extension-details-modal:
+      extension: الامتداد
+      author: المؤلف
+      description: الوصف
+      overview: نظرة عامة
+      details: التفاصيل
+      version: الإصدار
+      updated: تم التحديث
+      website: الموقع الإلكتروني
+      self-managed: مُدار ذاتيًا
+      self-managed-help-text: الامتداد المُدار ذاتيًا مصمم للمستخدمين الذين يستضيفون Fleetbase على خوادمهم الخاصة، خارج بيئة السحابة/SaaS. تتطلب هذه الامتدادات التثبيت والتكوين اليدوي. إذا كنت تستخدم Fleetbase كنسخة مستضافة ذاتيًا، يمكنك استخدام هذه الامتدادات لإضافة ميزات إضافية. ومع ذلك، فهي غير متاحة لمستخدمي السحابة/SaaS.
+    extension-pending-publish-viewer:
+      content-panel-title: الامتدادات المعلقة للنشر
+      focused-extension-title: >
+        تفاصيل {extensionName}
+      download-bundle: تحميل الحزمة
+      view-details: عرض التفاصيل
+      no-extensions-awaiting-publish: لا توجد امتدادات تنتظر النشر
+    extension-reviewer-control:
+      content-panel-title: الامتدادات التي تنتظر المراجعة
+      focused-extension-title: >
+        تفاصيل {extensionName}
+      approve-confirm-title: هل أنت متأكد أنك تريد الموافقة على هذا الامتداد؟
+      approve-confirm-body: يجب اختبار هذا الامتداد بدقة في بيئة التطوير والاختبار واختباره من حيث الامتثال وكذلك قضايا الأمان. بمجرد الموافقة، سيتعين نشر الامتداد يدويًا في السجل.
+      decline-confirm-title: هل أنت متأكد أنك تريد رفض هذا الامتداد؟
+      decline-confirm-body: سيتم رفض هذا الامتداد، ولكن سيتم منح المؤلف فرصة لإجراء التصحيحات وإعادة التقديم للمراجعة.
+      download-bundle: تحميل الحزمة
+      view-details: عرض التفاصيل
+      approve: الموافقة
+      reject: الرفض
+      no-extensions-awaiting-review: لا توجد امتدادات تنتظر المراجعة
+  installed:
+    title: الامتدادات المثبتة
+  purchased:
+    title: الامتدادات المشتراة
+  developers:
+    extensions:
+      extensions: الامتدادات
+      create-new-extension: إنشاء امتداد جديد
+      new-extension: امتداد جديد
+      extension: الامتداد
+      submission: التقديم
+      details: التفاصيل
+      bundles: الحزم
+      monetize: تحقيق الدخل
+      explore:
+        explore-extensions: استكشاف الامتدادات
+        explore-category-extensions: >
+          امتدادات {categoryName}
+      extension-form:
+        package-name: اسم الحزمة
+        package-json-name: اسم package.json
+        composer-json-name: اسم composer.json
+        submission-success-message: تم تقديم الامتداد وهو في انتظار المراجعة.
+        extension-category: الفئة
+        extension-category-help-text: اختر الفئة التي سيتمكن المستخدمون من العثور على الامتداد فيها.
+        extension-select-category: اختر الفئة
+        extension-name: اسم الامتداد
+        extension-icon: أيقونة الامتداد
+        upload-extension-icon: تحميل الأيقونة
+        extension-description: الوصف
+        extension-tags: العلامات
+        extension-add-tags: إضافة الكلمات الرئيسية والعلامات
+        extension-promotional-text: النص الترويجي
+        details-content-block: تفاصيل الامتداد
+        extension-listing-details: تفاصيل الإدراج
+        extension-subtitle: العنوان الفرعي
+        extension-website-url: عنوان الموقع الإلكتروني
+        extension-repo-url: عنوان المستودع
+        extension-support-url: عنوان الدعم
+        extension-privacy-policy-url: عنوان سياسة الخصوصية
+        extension-tos-url: عنوان شروط الخدمة
+        extension-primary-language: اللغة الأساسية
+        extension-version: الإصدار
+        extension-copyright: حقوق النشر
+        extension-copyright-help-text: أدخل إشعار حقوق النشر للامتداد الخاص بك. يتضمن هذا عادةً السنة واسم مالك حقوق النشر أو الشركة.
+        extension-payment-required: يتطلب الدفع
+        extension-payment-required-help-text: يحدد ما إذا كان الدفع أو الاشتراك مطلوبًا للمستخدمين لتثبيت هذا الامتداد.
+        extension-price: السعر
+        extension-price-help-text: حدد السعر العادي للامتداد. هذا هو التكلفة القياسية للمستخدمين لشراء أو الوصول إلى الامتداد.
+        extension-sale-price: سعر البيع
+        extension-sale-price-help-text: إذا كان الامتداد معروضًا حاليًا بسعر مخفض، أدخل سعر البيع هنا. يجب أن يكون أقل من السعر العادي.
+        extension-subscription-required: يتطلب الاشتراك
+        extension-subscription-required-help-text: يحدد ما إذا كان يجب على المستخدم أن يكون لديه اشتراك لتثبيت واستخدام هذا الامتداد.
+        extension-subscription-billing-period: فترة الفوترة للاشتراك
+        extension-subscription-billing-period-placeholder: اختر فترة الفوترة
+        extension-subscription-billing-period-help-text: حدد فترة الفوترة للاشتراك. تشمل الأمثلة شهريًا، ربع سنويًا، سنويًا، أو فترات مخصصة أخرى.
+        extension-subscription-amount: مبلغ الاشتراك
+        extension-subscription-amount-help-text: أدخل المبلغ القياسي الذي سيتم تحصيله للاشتراك. يجب أن يعكس هذا السعر العادي قبل أي خصومات أو تعديلات في التسعير المتدرج.
+        extension-subscription-model: نموذج الاشتراك
+        extension-subscription-model-help-text: يحدد نوع نموذج تسعير الاشتراك الذي يجب اتباعه. تشمل الخيارات السعر الثابت، المتدرج، والاشتراك القائم على الاستخدام.
+        extension-subscription-tiers: مستويات الاشتراك
+        extension-subscription-tiers-help-text: حدد مستويات التسعير المختلفة للاشتراك، إذا كان ذلك ممكنًا. قم بتضمين تفاصيل مثل مستويات الاشتراك، التسعير لكل مستوى، وأي ميزات أو قيود محددة لكل مستوى.
+        extension-name-help-text: أدخل الاسم الرسمي للامتداد. سيتم عرض هذا كالمعرف الأساسي للمستخدمين.
+        extension-icon-help-text: قم بتحميل أيقونة تمثل الامتداد. سيتم استخدام هذه الأيقونة في القوائم ونتائج البحث.
+        extension-description-help-text: قدم وصفًا تفصيليًا لما يفعله الامتداد وميزاته الرئيسية. تساعد هذه المعلومات المستخدمين على فهم وظيفة الامتداد.
+        extension-tags-help-text: أضف الكلمات الرئيسية والعلامات ذات الصلة التي تصف الامتداد، مما يساعد المستخدمين في العثور عليه من خلال البحث.
+        extension-promotional-text-help-text: اكتب نصًا ترويجيًا لتسليط الضوء على نقاط البيع الفريدة للامتداد. سيتم استخدام هذا النص في التسويق أو الأقسام المميزة.
+        extension-subtitle-help-text: قدم عنوانًا فرعيًا موجزًا يقدم سياقًا إضافيًا أو معلومات حول الامتداد.
+        extension-website-url-help-text: أدخل عنوان URL للموقع الرسمي للامتداد أو صفحة المنتج لمزيد من المعلومات.
+        extension-repo-url-help-text: قدم عنوان URL لمستودع كود الامتداد (مثل GitHub، GitLab)، إذا كان ذلك ممكنًا.
+        extension-support-url-help-text: حدد عنوان URL حيث يمكن للمستخدمين الحصول على الدعم، طرح الأسئلة، أو الإبلاغ عن المشكلات المتعلقة بالامتداد.
+        extension-privacy-policy-url-help-text: رابط إلى وثيقة سياسة الخصوصية التي توضح كيفية التعامل مع بيانات المستخدم وحمايتها.
+        extension-tos-url-help-text: رابط إلى وثيقة شروط الخدمة التي يجب على المستخدمين الموافقة عليها قبل استخدام الامتداد.
+        extension-primary-language-help-text: حدد اللغة الأساسية التي تم تطوير الامتداد بها أو المتاحة بها.
+        extension-version-help-text: حدد الإصدار الحالي للامتداد. هذا مهم لتتبع التحديثات والتوافق.
+        extension-payment-details: تفاصيل الدفع
+        extension-screenshots: لقطات الشاشة
+        upload-screenshots: تحميل لقطات الشاشة
+        submit-for-review: تقديم للمراجعة
+        extension-bundle: حزمة الامتداد
+        extension-upload-bundle: تحميل حزمة الامتداد
+        details: التفاصيل
+        bundle-id: معرف الحزمة
+        bundle-id-help-text: معرف الحزمة المنشورة حاليًا.
+        extension-id: معرف الامتداد
+        extension-id-help-text: المعرف الفريد لهذا الامتداد.
+        bundles: الحزم
+        upload-new-bundle: تحميل حزمة جديدة
+        self-managed: مُدار ذاتيًا
+        self-managed-help-text: قم بتمكين هذا الخيار إذا كان الموديل مخصصًا للحالات المستضافة ذاتيًا فقط. من خلال تحديد هذا، لن يكون الموديل متاحًا للتثبيت على إصدار السحابة/SaaS من Fleetbase ويجب تثبيته يدويًا بواسطة المستخدم على الخادم الخاص به.

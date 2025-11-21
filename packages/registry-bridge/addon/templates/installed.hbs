@@ -1,0 +1,32 @@
+<Layout::Section::Header @title={{t "registry-bridge.installed.title"}} />
+
+<Layout::Section::Body class="overflow-y-scroll h-full">
+    <div class="m-auto p-8">
+        <div class="extension-card-grid-container">
+            {{#each @model as |extension|}}
+                <div class="extension-card-container">
+                    <div class="extension-card-icon-container">
+                        <Image src={{extension.icon_url}} alt={{extension.name}} @fallbackSrc={{config "defaultValues.extensionIcon"}} />
+                    </div>
+                    <div class="extension-card-body-container">
+                        <div class="flex flex-col">
+                            <div class="font-semibold text-sm block">{{extension.name}}</div>
+                            <div class="text-xs">{{n-a extension.description}}</div>
+                        </div>
+                        <div class="flex flex-col flex-1 pt-1 space-y-2">
+                            <Button
+                                @type="default"
+                                @text={{t "registry-bridge.common.about-extension" extensionName=extension.name}}
+                                @icon="circle-info"
+                                @onClick={{fn this.about extension}}
+                                class="w-full btn-block"
+                            />
+                            <Button @type="danger" @text={{t "registry-bridge.common.uninstall"}} @icon="trash" @onClick={{fn this.uninstall extension}} class="w-full btn-block" />
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+    <Spacer @height="300px" />
+</Layout::Section::Body>

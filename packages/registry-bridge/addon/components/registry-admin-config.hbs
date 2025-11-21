@@ -1,0 +1,16 @@
+<ContentPanel @title="Registry Configuration" @open={{true}} @wrapperClass="bordered-classic">
+    <InputGroup @name="Registry Host" @value={{this.registryHost}} disabled={{or this.getConfigValues.isRunning this.saveConfigValues.isRunning}} />
+    <InputGroup @name="Registry Token" @value={{this.registryToken}} disabled={{or this.getConfigValues.isRunning this.saveConfigValues.isRunning}} />
+</ContentPanel>
+<EmberWormhole @to="next-view-section-subheader-actions">
+    <Button
+        @type="primary"
+        @size="sm"
+        @icon="save"
+        @text="Save Changes"
+        @onClick={{perform this.saveConfigValues}}
+        @disabled={{or this.getConfigValues.isRunning this.saveConfigValues.isRunning}}
+        @isLoading={{this.saveConfigValues.isRunning}}
+    />
+</EmberWormhole>
+<Spacer @height="400px" />
