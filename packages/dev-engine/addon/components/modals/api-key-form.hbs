@@ -1,0 +1,47 @@
+<Modal::Default @modalIsOpened={{@modalIsOpened}} @options={{@options}} @confirm={{@onConfirm}} @decline={{@onDecline}} as |options|>
+    <div class="modal-body-container">
+        <InputGroup
+            @name={{t "developers.common.name"}}
+            @value={{options.apiKey.name}}
+            @placeholder={{t "developers.component.modals.api-key-form.name-placeholder"}}
+            @disabled={{cannot @options.formPermission}}
+            aria-label={{t "developers.component.modals.api-key-form.api-name-aria-label"}}
+            class="w-full form-input"
+        />
+        <div class="input-group">
+            <InputLabel @labelText={{t "developers.component.modals.api-key-form.expiration-label"}} @helpText={{t "developers.component.modals.api-key-form.expiration-help-text"}} />
+
+            <select class="w-full mb-1 form-select" disabled={{cannot @options.formPermission}} aria-label={{t "developers.component.modals.api-key-form.api-expiration-aria-label"}} {{on "change" @options.setExpiration}}>
+                <option selected disabled>
+                    {{t "developers.component.modals.api-key-form.select-expiration-date"}}
+                </option>
+                {{#each @options.expirationOptions as |opt|}}
+                    <option value={{opt}}>
+                        {{opt}}
+                    </option>
+                {{/each}}
+            </select>
+            <p class="text-xs dark:text-gray-100">
+                {{t "developers.component.modals.api-key-form.key-expires"}}
+            </p>
+        </div>
+
+        <div class="flex flex-col input-group">
+            {{#if @options.testMode}}
+                <Badge @status="test">
+                    {{t "developers.component.modals.api-key-form.test-key"}}
+                </Badge>
+                <p class="block my-2 text-sm text-blue-500 dark:text-blue-300">
+                    {{t "developers.component.modals.api-key-form.testing-environments"}}
+                </p>
+            {{else}}
+                <Badge @status="live">
+                    {{t "developers.component.modals.api-key-form.live-key"}}
+                </Badge>
+                <p class="block my-2 text-sm text-blue-500 dark:text-blue-300">
+                    {{t "developers.component.modals.api-key-form.production-environments"}}
+                </p>
+            {{/if}}
+        </div>
+    </div>
+</Modal::Default>

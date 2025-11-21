@@ -1,0 +1,97 @@
+<Modal::Default @modalIsOpened={{@modalIsOpened}} @options={{@options}} @confirm={{@onConfirm}} @decline={{@onDecline}} as |options|>
+    <div class="px-4 mb-10">
+        <div class="flex">
+            <div class="w-1/4">
+                <span class="font-semibold dark:text-gray-100">
+                    {{t "developers.common.key"}}
+                </span>
+            </div>
+            <div class="w-3/4">
+                <div class="mb-2 dark:text-gray-100">
+                    {{@options.apiKey.key}}
+                </div>
+                <Button
+                    @text={{t "developers.component.modals.roll-api-key-form.view-button-text"}}
+                    @size="xs"
+                    @icon="arrow-right"
+                    @onClick={{fn @options.viewRequestLogs @options.apiKey}}
+                />
+            </div>
+        </div>
+    </div>
+
+    <div class="px-4 mb-10">
+        <div class="flex">
+            <div class="w-1/4">
+                <span class="font-semibold dark:text-gray-100">
+                    {{t "developers.component.modals.roll-api-key-form.last-used"}}
+                </span>
+            </div>
+            <div class="w-3/4 dark:text-gray-100">
+                {{@options.apiKey.lastUsed}}
+            </div>
+        </div>
+    </div>
+
+    <div class="px-4 mb-10">
+        <div class="flex">
+            <div class="w-1/4">
+                <span class="font-semibold dark:text-gray-100">
+                    {{t "developers.component.modals.roll-api-key-form.expiration"}}
+                </span>
+            </div>
+            <div class="w-3/4">
+                <select
+                    class="w-full mb-2 form-select form-input-sm"
+                    aria-label={{t "developers.component.modals.roll-api-key-form.api-key-expiration-label"}}
+                    disabled={{cannot @options.formPermission}}
+                    {{on "change" @options.setExpiration}}
+                >
+                    <option selected disabled>
+                        {{t "developers.component.modals.roll-api-key-form.select-date"}}
+                    </option>
+                    {{#each @options.expirationOptions as |opt|}}
+                        <option value={{opt}}>
+                            {{opt}}
+                        </option>
+                    {{/each}}
+                </select>
+                <p class="dark:text-gray-100">
+                    {{t "developers.component.modals.roll-api-key-form.key-expires"}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="px-5 py-4 border-t border-gray-200 dark:border-gray-800">
+        <div class="mt-2 mb-7">
+            <div class="font-semibold dark:text-gray-100">
+                {{t "developers.component.modals.roll-api-key-form.additional-required"}}
+            </div>
+            <p class="dark:text-white">
+                {{t "developers.component.modals.roll-api-key-form.enter-password"}}
+            </p>
+        </div>
+
+        <div class="input-group">
+            <label>
+                {{t "developers.common.email"}}
+            </label>
+            <Input @type="email" @value={{@options.user.email}} aria-label={{t "developers.component.modals.roll-api-key-form.user-email"}} class="w-full form-input" disabled="true" />
+        </div>
+
+        <div class="input-group">
+            <label>
+                {{t "developers.common.password"}}
+            </label>
+            <Input
+                @type="password"
+                @value={{@options.password}}
+                aria-label={{t "developers.component.modals.roll-api-key-form.user-password"}}
+                placeholder={{t "developers.component.modals.roll-api-key-form.user-password-placeholder"}}
+                class="w-full form-input"
+                disabled={{cannot @options.formPermission}}
+            />
+        </div>
+    </div>
+</Modal::Default>

@@ -1,0 +1,17 @@
+<Modal::Default @modalIsOpened={{@modalIsOpened}} @options={{@options}} @confirm={{@onConfirm}} @decline={{@onDecline}} as |options|>
+    <div class="modal-body-container">
+        <div class="input-group">
+            <label>
+                {{t "developers.common.name"}}
+            </label>
+            <Input
+                @value={{options.apiKey.name}}
+                @type="text"
+                aria-label={{t "developers.component.modals.rename-api-key-form.api-key-label"}}
+                class="w-full form-input"
+                placeholder={{t "developers.component.modals.rename-api-key-form.api-key-placeholder"}}
+                disabled={{cannot @options.formPermission}}
+            />
+        </div>
+    </div>
+</Modal::Default>

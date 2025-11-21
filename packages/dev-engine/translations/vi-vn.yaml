@@ -1,0 +1,280 @@
+developers:
+  extension-name: Developers
+  common:
+    all: Tất cả
+    attempt: Cố gắng
+    back: Quay lại
+    bulk-action: Hành động hàng loạt
+    clear: Xóa
+    code: Mã
+    created: Đã tạo
+    date: Ngày
+    description: Mô tả
+    email: Email
+    event-id: ID sự kiện
+    event-type: Loại sự kiện
+    event: Sự kiện
+    export: Xuất
+    failed: Thất bại
+    id: ID
+    key: Khóa
+    mode: Chế độ
+    name: Tên
+    new: Mới
+    password: Mật khẩu
+    result: Kết quả
+    source: Nguồn
+    status: Trạng thái
+    succeeded: Thành công
+    time: Thời gian
+    url: URL
+    version: Phiên bản
+    reload: Tải lại
+    reload-data: Tải lại dữ liệu
+  component:
+    api-event:
+      data:
+        title: Dữ liệu sự kiện
+        no-data: Không có dữ liệu sự kiện
+      details:
+        prefixTitle: Sự kiện
+    api-request-log:
+      details:
+        prefixTitle: Yêu cầu
+        duration: Thời lượng
+        ip-address: Địa chỉ IP
+      query-params:
+        title: Tham số truy vấn yêu cầu
+        no-parameters: Không có tham số truy vấn
+      request-headers:
+        title: Tiêu đề yêu cầu
+        no-headers: Không có tiêu đề yêu cầu
+      request-body:
+        title: Thân yêu cầu
+        title-second-part: thân
+        no-request-body: Không có thân yêu cầu {method}
+      response-body:
+        title: Thân phản hồi
+        no-response-body: Không có thân phản hồi
+    modals:
+      api-key-form:
+        api-name-aria-label: Tên Khóa API
+        api-expiration-aria-label: Ngày hết hạn Khóa API
+        name-placeholder: Nhập biệt danh hoặc tên môi trường cho Khóa API
+        expiration-label: Hết hạn
+        expiration-help-text: Tùy chọn đặt ngày hết hạn cho khóa API này.
+        select-expiration-date: Chọn ngày hết hạn...
+        key-expires: Khi khóa này hết hạn, bạn sẽ không thể thực hiện bất kỳ hành
+          động nào với nó.
+        enter-domain-placeholder: Nhập tên miền
+        allowed-browser-label: Nguồn trình duyệt được phép
+        allowed-browser-help-text: Nhập các tên miền sẽ quyết định chính sách CORS
+          cho yêu cầu trình duyệt từ khóa API này.
+        test-key: Khóa thử nghiệm
+        testing-environments: Bạn đang tạo một khóa môi trường thử nghiệm, sử dụng
+          cho các môi trường thử nghiệm.
+        live-key: Khóa hoạt động
+        production-environments: Bạn đang tạo một khóa môi trường hoạt động, sử dụng
+          cho các môi trường sản xuất.
+      listen-custom-channel:
+        name: ID kênh sự kiện
+        name-help-text: Nhập định danh kênh socket bạn muốn lắng nghe
+      rename-api-key-form:
+        api-key-label: Tên Khóa API
+        api-key-placeholder: Nhập biệt danh hoặc tên môi trường cho Khóa API
+      roll-api-key-form:
+        view-button-text: Xem nhật ký
+        last-used: Lần sử dụng cuối
+        expiration: Hết hạn
+        api-key-expiration-label: Ngày hết hạn Khóa API
+        select-date: Chọn ngày hết hạn...
+        key-expires: Khi khóa này hết hạn, bạn sẽ không thể thực hiện bất kỳ hành
+          động nào với nó.
+        additional-required: Yêu cầu xác thực bổ sung
+        enter-password: Để tiếp tục, vui lòng nhập mật khẩu của bạn.
+        user-email: Email người dùng
+        user-password: Mật khẩu người dùng
+        user-password-placeholder: Xác thực yêu cầu bằng mật khẩu của bạn
+      webhook-form:
+        endpoint-url: URL điểm cuối
+        endpoint-url-help-text: URL mà Fleetbase sẽ gửi các callback sự kiện đến.
+        endpoint-url-placeholder: https://
+        description-label: Mô tả
+        description-help-text: Tùy chọn thêm mô tả cho điểm cuối webhook.
+        description-aria-label: Mô tả Webhook
+        description-placeholder: Mô tả tùy chọn về mục đích sử dụng điểm cuối webhook
+          này.
+        api-credential-label: Thông tin xác thực API
+        api-credential-help-text: Giới hạn điểm cuối webhook chỉ nhận callback từ
+          một khóa API cụ thể.
+        api-credential-message: Nhận từ tất cả Thông tin xác thực API...
+        api-credential-infoblock: Bạn có thể chọn một thông tin xác thực API cụ thể
+          sẽ được sử dụng để kích hoạt callback đến điểm cuối webhook này, hoặc bạn
+          có thể chọn "Tất cả Thông tin xác thực API", và điểm cuối webhook sẽ nhận
+          callback bất kể thông tin xác thực API được sử dụng.
+        version-help-text: Chọn một phiên bản API cụ thể để nhận callback.
+        version-message: Chọn một phiên bản API...
+        events-send-label: Sự kiện gửi đi
+        events-send-help-text: Chỉ định rõ các sự kiện để nhận callback.
+        select-events: Chọn sự kiện...
+        event-search-label: Tìm kiếm sự kiện
+        event-search-placeholder: Tìm kiếm...
+        no-selected: Chưa chọn sự kiện nào
+        dropdown: Tìm kiếm sự kiện với menu thả xuống ở trên, hoặc
+        all-events: nhận tất cả sự kiện
+    webhook:
+      attempts:
+        copy-event-id: Sao chép ID sự kiện vào clipboard
+        view-event: Xem Sự kiện
+        info-message: ID sự kiện đã được sao chép vào clipboard.
+        webhook-header: Các lần thử webhook
+        webhook-message: Các lần thử gửi sự kiện đến điểm cuối của bạn trong 15 ngày
+          qua
+        http-code: Mã trạng thái HTTP
+        response-time: Thời gian phản hồi
+        request-endpoint: Yêu cầu đến điểm cuối của bạn
+        no-request-body: Không có nội dung yêu cầu
+        response: Phản hồi
+        no-response-body: Không có nội dung phản hồi
+      details:
+        webhook-details: Chi tiết webhook
+        update-details: Cập nhật chi tiết...
+        event-types: Loại sự kiện
+        help-text: Bạn sẽ nhận được webhook cho các loại sự kiện mới khi chúng được
+          thêm vào, ngoại trừ những loại yêu cầu lựa chọn rõ ràng. Việc lắng nghe
+          tất cả các loại sự kiện thường không cần thiết và có thể làm tăng tải cho
+          máy chủ của bạn.
+        all-events: Tất cả sự kiện
+        api-credential: Thông tin API
+        help-text-event: Bạn sẽ nhận được các callback webhook bất kể thông tin API
+          nào được sử dụng để kích hoạt sự kiện.
+        api-credentials: Nhận từ tất cả các thông tin API
+      metrics:
+        date-created: Ngày tạo
+    widget:
+      api-metrics:
+        title: Giám sát
+        api-requests: Yêu cầu API
+        api-error: Phân phối lỗi API
+        webhooks: Webhooks
+        webhooks-response: Thời gian phản hồi webhooks
+        success-label: thành công
+        error-label: lỗi
+        get-error: Lỗi GET
+        post-error: Lỗi POST
+        put-error: Lỗi PUT
+        delete-error: Lỗi DELETE
+        duration-ms: Thời lượng (ms)
+  api-keys:
+    index:
+      public-key: Khóa công khai
+      secret-key: Khóa bí mật
+      enviroment: Môi trường
+      expiry: Hết hạn
+      last-used: Lần sử dụng cuối
+      edit-key: Chỉnh sửa khóa...
+      roll-key: Tạo khóa mới...
+      view-logs: Xem nhật ký yêu cầu...
+      delete-key: Xóa khóa...
+      new-api-key-title: Khóa API mới
+      new-api-key-message: Thông tin API mới đã được tạo.
+      edit-api-key-title: Chỉnh sửa khóa API
+      edit-api-key-message: Thay đổi thông tin API đã được lưu.
+      rename-api-key-title: Đổi tên khóa API {apiKeyName}
+      untitled: Chưa đặt tên
+      rename-api-key-success-message: Thông tin API đã được đổi tên thành {apiKeyName}
+      delete-api-key-title: Xóa khóa API {apiKeyName}
+      delete-api-key-body: Bạn có chắc chắn muốn xóa khóa API này không? Tất cả dữ
+        liệu liên quan đến khóa API này sẽ không thể truy cập được. Hành động này
+        không thể hoàn tác.
+      delete-api-key-success-message: Thông tin API {apiKeyName} đã được xóa.
+      delete-accept-button-text: Xóa thông tin API
+      roll-api-key: Tạo khóa API mới {apiKeyName}
+      roll-api-key-button-text: Tạo khóa API mới
+      roll-api-key-success-message: Thông tin xác thực API {apiKeyName} đã được làm
+        mới.
+      roll-api-key-error-message: Không thể làm mới thông tin xác thực API.
+      export-api: Xuất Thông Tin Xác Thực API
+      export-api-accept-button-text: Tải xuống
+      export-api-error-message: Không thể tải xuống bản xuất thông tin xác thực API.
+      title: Khóa API
+      label: Xem dữ liệu thử nghiệm
+      help-text: Chuyển đổi xem dữ liệu thử nghiệm sẽ cho phép bảng điều khiển hiển
+        thị tất cả dữ liệu thử nghiệm từ môi trường sandbox của bạn
+      select-api-key-aria-label: Chọn Khóa API
+      select-key: Chọn khóa cụ thể
+      test-data: Tất cả dữ liệu thử nghiệm...
+      delete-api: Xóa Thông Tin Xác Thực API
+  events:
+    index:
+      title: Sự kiện
+  logs:
+    index:
+      api-credential: Thông Tin Xác Thực API
+      http-method: Phương thức HTTP
+      title: Nhật ký
+  sockets:
+    index:
+      link-text: Xem Kênh
+      channel: Kênh
+      listen-channel-title: Lắng nghe trên kênh tùy chỉnh
+      listen-channel-button-text: Lắng nghe
+      title: Các kênh nhận sự kiện từ tài khoản của bạn
+      button-text: Lắng nghe trên kênh tùy chỉnh
+    view:
+      socket-connection-error: Lỗi kết nối Socket!
+      socket-connected: Socket đã kết nối
+      socket-subscribed: Socket đã đăng ký kênh {modelName}
+      output: Đầu ra
+      awaiting-events: Đang chờ sự kiện...
+  webhooks:
+    index:
+      view-logs: Xem Nhật ký
+      edit-webhook: Chỉnh sửa Webhook
+      delete-webhook: Xóa Webhook
+      add-webhook: Thêm điểm cuối webhook
+      add-webhook-button-text: Xác nhận & Tạo
+      edit-webhook-endpoint: Chỉnh sửa điểm cuối webhook
+      edit-webhook-endpoint-button-text: Lưu Thay đổi
+      new-webhook-success-message: Webhook mới đã được tạo.
+      delete-webhook-endpoint: Xóa Điểm Cuối Webhook này
+      delete-webhook-endpoint-body: Bạn có chắc chắn muốn xóa Webhook này không? Tất
+        cả dữ liệu liên quan đến Webhook này sẽ không thể truy cập được. Điểm cuối
+        này cũng sẽ ngừng nhận các sự kiện trong tương lai. Hành động này không thể
+        hoàn tác.
+      delete-webhook-success-message: Điểm cuối webhook đã được xóa.
+      title: Webhooks
+      button-text: Thêm điểm cuối mới
+    view:
+      webhook-deleted-success-message: Điểm cuối webhook đã bị xóa.
+      disable-webhook-title: Vô hiệu hóa điểm cuối webhook
+      disable-webhook-body: Điểm cuối webhook này có thể được tạm thời vô hiệu hóa
+        để nó không nhận thông báo cho đến khi được kích hoạt lại. Fleetbase sẽ không
+        thử lại bất kỳ thông báo nào được tạo ra trong khi điểm cuối bị vô hiệu hóa.
+      disable-webhook-button-text: Vô hiệu hóa điểm cuối webhook
+      disable-webhook-success-message: Webhook đã bị vô hiệu hóa.
+      enable-webhook-title: Kích hoạt điểm cuối webhook
+      enable-webhook-body: Webhook này đang bị vô hiệu hóa và không còn nhận thông
+        báo nữa. Điều này có thể đã được thực hiện tự động vì chúng tôi phát hiện
+        một khoảng thời gian dài lỗi. Nếu bạn đã khắc phục sự cố, bạn có thể kích
+        hoạt lại điểm cuối webhook tại đây. Fleetbase sẽ không thử lại bất kỳ thông
+        báo nào được tạo ra trong khoảng thời gian đó, và nếu chúng tôi tiếp tục phát
+        hiện lỗi trên điểm cuối này, chúng tôi sẽ vô hiệu hóa điểm cuối một lần nữa.
+      enable-webhook-button-text: Kích hoạt điểm cuối webhook
+      enable-webhook-success-message: Webhook đã được kích hoạt.
+      update-endpoint-button-text: Cập nhật điểm cuối
+      update-endpoint-success-message: Chi tiết webhook đã được cập nhật.
+      send-button-text: Gửi webhook thử nghiệm...
+      disable-button-text: Vô hiệu hóa...
+      enable-button-text: Kích hoạt...
+      delete-button-text: Xóa...
+  application:
+    sidebar:
+      title: Bảng điều khiển Nhà phát triển
+      items:
+        home: Bảng điều khiển
+        api-keys: Khóa API
+        webhooks: Webhook
+        websockets: WebSocket
+        logs: Nhật ký
+        events: Sự kiện
