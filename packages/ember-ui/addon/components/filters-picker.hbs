@@ -1,0 +1,61 @@
+<DropdownButton
+    @buttonComponent="filters-picker/button"
+    @buttonComponentArgs={{hash activeFilters=this.activeFilters iconOnly=@iconOnly}}
+    @text={{or @text (t "common.filter")}}
+    @icon={{or @icon "filter"}}
+    @type={{@type}}
+    @size={{or @size "xs"}}
+    @buttonClass={{@buttonClass}}
+    @buttonWrapperClass={{@buttonWrapperClass}}
+    @triggerClass={{@triggerClass}}
+    @wrapperClass={{@wrapperClass}}
+    @renderInPlace={{@renderInPlace}}
+    @registerAPI={{@registerAPI}}
+    @horizontalPosition={{@horizontalPosition}}
+    @verticalPosition={{@verticalPosition}}
+    @calculatePosition={{@calculatePosition}}
+    @defaultClass={{@defaultClass}}
+    @matchTriggerWidth={{@matchTriggerWidth}}
+    @onOpen={{this.updateFilters}}
+    @onClose={{this.updateFilters}}
+    @helpText={{t "filters-picker.filter-data"}}
+    ...attributes
+    as |dd|
+>
+    <div class="filters-dropdown-container" {{set-width (or @width "650px")}}>
+        <div class="filters-dropdown-header">
+            <h4>{{or @dropdownHeaderText (t "filters-picker.filters")}}</h4>
+        </div>
+        <div class="filters-dropdown-body">
+            <div class="grid grid-cols-1 lg:grid-cols-{{or @gridCols '2'}} gap-2 w-full mb-4">
+                {{#each this.filters as |filter|}}
+                    <div class="filter-component">
+                        {{#unless filter.noFilterLabel}}
+                            <label class="filter-component-label">{{or filter.filterLabel filter.label}}</label>
+                        {{/unless}}
+                        {{component
+                            filter.filterComponent
+                            value=filter.filterValue
+                            filter=filter
+                            param=(or filter.filterParam filter.valuePath)
+                            options=filter.filterOptions
+                            optionLabel=filter.filterOptionLabel
+                            optionValue=filter.filterOptionValue
+                            optionFormats=filter.filterOptionFormats
+                            fetchUri=filter.fetchUri
+                            fetchParams=(or filter.filterFetchParams filter.fetchParams)
+                            fetchOptions=(or filter.filterFetchOptions filter.fetchOptions)
+                            placeholder=(or filter.filterComponentPlaceholder filter.filterLabel filter.label)
+                            onChange=this.updateFilterValue
+                            onClear=this.clearFilterValue
+                        }}
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+        <div class="filters-dropdown-footer space-x-2">
+            <Button @text={{t "common.clear"}} @icon="trash" @size="xs" @onClick={{dropdown-fn dd this.clearFilters}} />
+            <Button @text={{t "common.apply"}} @icon="check" @type="primary" @size="xs" @onClick={{dropdown-fn dd this.applyFilters}} />
+        </div>
+    </div>
+</DropdownButton>

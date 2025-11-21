@@ -1,0 +1,101 @@
+{{#if this.visible}}
+    <BasicDropdown
+        id={{@dropdownId}}
+        class={{@wrapperClass}}
+        @renderInPlace={{@renderInPlace}}
+        @registerAPI={{this.onRegisterAPI}}
+        @horizontalPosition={{@horizontalPosition}}
+        @verticalPosition={{@verticalPosition}}
+        @calculatePosition={{@calculatePosition}}
+        @defaultClass={{@defaultClass}}
+        @matchTriggerWidth={{@matchTriggerWidth}}
+        @onOpen={{@onOpen}}
+        @onClose={{@onClose}}
+        @disabled={{this.disabled}}
+        {{did-insert this.onInsert}}
+        as |dd|
+    >
+        <dd.Trigger class={{@triggerClass}} {{did-insert this.onTriggerInsert}} {{did-update this.onArgsChanged @disabled @visible @permission @buttonComponentArgs}}>
+            {{#if @buttonComponent}}
+                {{component
+                    @buttonComponent
+                    buttonComponentArgs=this.buttonComponentArgs
+                    text=@text
+                    class=(concat @buttonClass (if dd.isOpen " dd-is-open"))
+                    wrapperClass=@buttonWrapperClass
+                    type=this.type
+                    active=@active
+                    size=this.buttonSize
+                    isLoading=@isLoading
+                    disabled=this.disabled
+                    textClass=@textClass
+                    helpText=@helpText
+                    tooltipPlacement=@tooltipPlacement
+                    img=@img
+                    imgClass=@imgClass
+                    alt=@alt
+                }}
+            {{else}}
+                <Button
+                    title={{@text}}
+                    class="{{@buttonClass}} {{if dd.isOpen 'dd-is-open'}}"
+                    @wrapperClass={{@buttonWrapperClass}}
+                    @type={{this.type}}
+                    @active={{@active}}
+                    @size={{this.buttonSize}}
+                    @isLoading={{@isLoading}}
+                    @disabled={{this.disabled}}
+                    {{did-insert this.onButtonInsert}}
+                    ...attributes
+                >
+                    {{#if @icon}}
+                        <FaIcon @icon={{@icon}} @prefix={{@iconPrefix}} @size={{@iconSize}} class="{{@iconClass}} {{if @text 'mr-2'}}" />
+                    {{/if}}
+                    {{#if @img}}
+                        <img src={{@img}} class={{@imgClass}} alt={{or @alt "image"}} />
+                    {{/if}}
+                    {{#if (and (not this.doesntHavePermissions) @helpText)}}
+                        <Attach::Tooltip @class="clean" @animation="scale" @placement={{or @tooltipPlacement "top"}}>
+                            <InputInfo @text={{@helpText}} />
+                        </Attach::Tooltip>
+                    {{/if}}
+                    <div class="{{@textClass}} truncate">
+                        {{@text}}
+                    </div>
+                </Button>
+            {{/if}}
+            {{#if this.doesntHavePermissions}}
+                <Attach::Tooltip @class="clean" @animation="scale" @placement={{or @tooltipPlacement "top"}}>
+                    <InputInfo @text={{t "common.unauthorized"}} />
+                </Attach::Tooltip>
+            {{/if}}
+        </dd.Trigger>
+        <dd.Content class={{@contentClass}} @overlay={{@overlay}}>
+            {{#if (has-block)}}
+                {{yield dd}}
+            {{else}}
+                <div class="next-dd-menu mt-1 mx-0 {{@dropdownMenuClass}}">
+                    {{#each @items as |item|}}
+                        {{#if item.separator}}
+                            <div class="next-dd-menu-seperator {{item.seperatorClass}}"></div>
+                        {{else}}
+                            <div class="px-1 {{item.wrapperClass}}">
+                                <a
+                                    href="javascript:;"
+                                    class="next-dd-item {{item.class}} {{if item.disabled 'disabled'}}"
+                                    disabled={{item.disabled}}
+                                    {{on "click" (dropdown-fn dd (if item.perform (perform item.perform) (or item.onClick item.fn)))}}
+                                >
+                                    {{#if item.icon}}
+                                        <div class="w-{{or item.iconWidth '6'}}"><FaIcon @icon={{item.icon}} @size={{or item.iconSize "sm"}} /></div>
+                                    {{/if}}
+                                    <div>{{or item.text item.label}}</div>
+                                </a>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+            {{/if}}
+        </dd.Content>
+    </BasicDropdown>
+{{/if}}

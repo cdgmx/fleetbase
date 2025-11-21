@@ -1,0 +1,11 @@
+{{#each this.modalsManager.modals as |modal|}}
+    {{component
+        (component modal.componentToRender options=modal.options)
+        modalIsOpened=modal.isOpen
+        options=modal.options
+        modalId=modal.id
+        zIndex=modal.options._zIndex
+        onConfirm=(fn this.confirm modal.id)
+        onDecline=(fn this.decline modal.id)
+    }}
+{{/each}}

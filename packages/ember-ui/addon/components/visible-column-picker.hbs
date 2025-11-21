@@ -1,0 +1,36 @@
+<DropdownButton
+    @text={{if @iconOnly "" (or @text (t "common.columns"))}}
+    @icon={{or @icon "sliders-h"}}
+    @type={{@type}}
+    @size={{or @size "xs"}}
+    @buttonClass={{@buttonClass}}
+    @buttonWrapperClass={{@buttonWrapperClass}}
+    @triggerClass={{@triggerClass}}
+    @wrapperClass={{@wrapperClass}}
+    @renderInPlace={{@renderInPlace}}
+    @registerAPI={{@registerAPI}}
+    @horizontalPosition={{@horizontalPosition}}
+    @verticalPosition={{@verticalPosition}}
+    @calculatePosition={{@calculatePosition}}
+    @defaultClass={{@defaultClass}}
+    @matchTriggerWidth={{@matchTriggerWidth}}
+    @onOpen={{@onOpen}}
+    @onClose={{@onClose}}
+    @helpText={{t "visible-column-picker.select-viewable-columns"}}
+    ...attributes
+    as |dd|
+>
+    <div class="customize-columns-dropdown-container">
+        <div class="customize-columns-dropdown-header justify-between">
+            <h4>{{or @dropdownHeaderText (t "visible-column-picker.customize-columns")}}</h4>
+            <Button @text={{t "common.done"}} @icon="check" @type="primary" @size="xs" @onClick={{dropdown-fn dd this.applyChanges}} @wrapperClass="visible-column-picker-done-btn" />
+        </div>
+        <div class="customize-columns-dropdown-body">
+            <div class="grid grid-cols-3 lg:grid-cols-3 sm:grid-cols-1 gap-2 w-full">
+                {{#each this.columnsWithLabels as |column|}}
+                    <Checkbox @label={{column.label}} @value={{not column.hidden}} @onToggle={{fn this.selectColumn column}} />
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</DropdownButton>

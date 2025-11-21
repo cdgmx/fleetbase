@@ -1,0 +1,16 @@
+<div class="relative" aria-label={{or @value "-"}}>
+    <span class={{@column.cellClassNames}}>
+        {{#if (has-block)}}
+            {{yield}}
+        {{else}}
+            {{#if @column.humanize}}
+                {{smart-humanize (or @value "-")}}
+            {{else}}
+                {{or @value "-"}}
+            {{/if}}
+        {{/if}}
+    </span>
+    {{#if @column.showOnlineIndicator}}
+        <FaIcon @icon="circle" class="absolute left-0 top-0 {{if (get @row (or @onlineColumn 'online')) 'text-green-500' 'text-yellow-200'}}" />
+    {{/if}}
+</div>
