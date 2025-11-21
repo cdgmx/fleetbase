@@ -1,0 +1,83 @@
+<div class="form-wrapper" ...attributes>
+    <ContentPanel @title="Telematics Provider" @open={{true}} @wrapperClass="bordered-top">
+        <div class="grid grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-2 no-input-group-padding text-xs">
+            <InputGroup @name="Provider" @wrapperClass="col-span-2">
+                <div class="fleetbase-model-select fleetbase-power-select ember-model-select">
+                    <PowerSelect
+                        @options={{this.providers}}
+                        @selected={{this.selectedProvider}}
+                        @onChange={{this.selectProvider}}
+                        @placeholder="Select Provider"
+                        @triggerClass="form-select form-input"
+                        @disabled={{cannot-write @resource}}
+                        as |provider|
+                    >
+                        <div class="space-x-2 text-sm">
+                            <div class="inline-block align-top">
+                                <div class="hide-from-trigger h-1.5 w-full" />
+                                <Image src={{provider.icon}} class="w-5 h-5" />
+                            </div>
+                            <div class="inline-block">
+                                <div class="font-semibold normalize-in-trigger">{{provider.label}}</div>
+                                <div class="hide-from-trigger">{{n-a provider.description}}</div>
+                            </div>
+                        </div>
+                    </PowerSelect>
+                </div>
+            </InputGroup>
+        </div>
+    </ContentPanel>
+
+    {{#if this.selectedProvider}}
+        <ContentPanel @title="Credentials" @open={{true}} @actionButtons={{this.credentialsActionButtons}} @wrapperClass="bordered-top">
+            <div class="grid grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-2 no-input-group-padding text-xs">
+                {{#each this.selectedProvider.required_fields as |field|}}
+                    <InputGroup
+                        @name={{field.label}}
+                        @value={{get @resource.credentials field.name}}
+                        @required={{field.required}}
+                        @type={{if (eq field.type "password") "text" field.type}}
+                        @helpText={{field.help_text}}
+                        {{on "input" (fn this.setCredential field)}}
+                    />
+                {{/each}}
+            </div>
+        </ContentPanel>
+
+        <ContentPanel @title="Configure Integration" @open={{true}} @wrapperClass="bordered-top">
+            <div class="grid grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-2 no-input-group-padding text-xs">
+                <InputGroup @value={{@resource.name}} @name="Integration Name" />
+
+                {{#if this.selectedProvider.supports_webhooks}}
+                    <InputGroup @name="Webhook URL" @helpText={{concat "Configure the URL in your " this.selectedProvider.label " dashboard to receive real-time updates."}} @wrapperClass="col-span-2">
+                        <ClickToCopy @value={{this.selectedProvider.webhook_url}} class="w-full">
+                            <Input @value={{this.selectedProvider.webhook_url}} class="form-input w-full" readonly />
+                        </ClickToCopy>
+                        <small class="form-text text-muted mt-1">
+                            Configure this URL in your
+                            {{this.selectedProvider.label}}
+                            dashboard to receive real-time updates.
+                        </small>
+                    </InputGroup>
+                {{/if}}
+            </div>
+        </ContentPanel>
+    {{/if}}
+
+    <ContentPanel @title="Telematic Blackbox" @open={{true}} @wrapperClass="bordered-top">
+        <div class="grid grid-cols-1 gap-2 lg:grid-cols-3 gap-2 no-input-group-padding text-xs">
+            <InputGroup @value={{@resource.model}} @name="Model" />
+            <InputGroup @value={{@resource.serial_number}} @name="Serial Number" />
+            <InputGroup @value={{@resource.firmware_version}} @name="Firmware Version" />
+            <InputGroup @value={{@resource.imei}} @name="IMEI" />
+            <InputGroup @value={{@resource.imsi}} @name="IMSI" />
+            <InputGroup @value={{@resource.iccid}} @name="ICCID" />
+        </div>
+    </ContentPanel>
+
+    <CustomField::Yield @subject={{@resource}} @wrapperClass="bordered-top" />
+
+    <RegistryYield @registry="fleet-ops:component:telematic:form" as |RegistryComponent|>
+        <RegistryComponent @resource={{@resource}} @controller={{@controller}} @permission={{get-write-permission @resource}} />
+    </RegistryYield>
+</div>

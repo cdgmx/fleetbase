@@ -1,0 +1,86 @@
+<MapContainer::Topbar class="next-topbar-{{this.layout}}">
+    <MapContainer::ViewSwitch>
+        <FaIcon @icon="layer-group" class="mr-2 text-gray-400 dark:text-gray-600" />
+        <button type="button" id="ops-map-view-button" class="{{if (eq this.layout 'map') 'active'}}" {{on "click" (fn this.changeLayout "map")}}>{{t "common.map"}}</button>
+        <button type="button" id="ops-table-view-button" class="{{if (eq this.layout 'table') 'active'}} flex flex-row items-center relative" {{on "click" (fn this.changeLayout "table")}}>
+            <div class="mr-1.5">{{t "common.table"}}</div>
+            <Badge
+                class="flex items-center justify-center -mr-4"
+                @spanClass="rounded-full items-center justify-center h-5 w-7"
+                @hideStatusDot={{true}}
+                @status="info"
+            >{{@model.meta.total}}</Badge>
+        </button>
+        <button type="button" id="ops-kanban-view-button" class="{{if (eq this.layout 'kanban') 'active'}}" {{on "click" (fn this.changeLayout "kanban")}}>{{t "common.board"}}</button>
+    </MapContainer::ViewSwitch>
+</MapContainer::Topbar>
+
+{{#if (eq this.layout "map")}}
+    <Map as |Map|>
+        <Map.Container>
+            <Map.Toolbar />
+            <Map.Search />
+            <Map.LeafletLiveMap />
+            <Map.OrderList />
+            <Map.Drawer />
+        </Map.Container>
+    </Map>
+{{/if}}
+
+{{#if (eq this.layout "table")}}
+    <Layout::Resource::Tabular
+        @resource="order"
+        @title={{t "resource.orders"}}
+        @searchQuery={{this.query}}
+        @onSearch={{perform this.orderActions.controllerSearchTask this}}
+        @bulkSearchValue={{this.bulk_query}}
+        @onClearBulkSearch={{fn (mut this.bulk_query)}}
+        @onSubmitBulkSearch={{fn (mut this.bulk_query)}}
+        @bulkSearchPlaceholder={{t "prompt.order-bulk-search"}}
+        @data={{@model}}
+        @columns={{this.columns}}
+        @page={{this.page}}
+        @onPageChange={{fn (mut this.page)}}
+        @setupTable={{fn (mut this.table)}}
+        @actionButtons={{this.actionButtons}}
+        @bulkActions={{this.bulkActions}}
+        @filterPickerGridCols="3"
+        @filterPickerWidth="700px"
+        @controller={{this}}
+        @tfootVerticalOffset="7"
+        @tfootVerticalOffsetElements="#next-view-section-subheader,.next-table-wrapper > table > thead,.next-map-container-topbar"
+    />
+{{/if}}
+
+{{#if (eq this.layout "kanban")}}
+    <Layout::Section::Header @title={{t "menu.order-board"}} @subtitle={{@model.length}} @subtitleClass="text-xs text-center font-semibold ml-2 w-6 h-6 rounded-full bg-blue-100 text-blue-900 dark:bg-blue-900 dark:text-blue-100 flex items-center justify-center" @actionsWrapperClass="space-x-1">
+        <div class="flex flex-row items-center space-x-2">
+            <div class="w-64">
+                <div class="fleetbase-model-select fleetbase-power-select ember-model-select">
+                    <ModelSelect
+                        @modelName="order-config"
+                        @selectedModel={{or this.orderConfig this.type}}
+                        @placeholder={{t "order.fields.order-type-placeholder"}}
+                        @triggerClass="form-select form-input order-board-type-filter"
+                        @infiniteScroll={{false}}
+                        @renderInPlace={{true}}
+                        @allowClear={{true}}
+                        @onChange={{fn (mut this.orderConfig)}}
+                        @onChangeId={{fn (mut this.type)}}
+                        as |orderConfig|
+                    >
+                        <div class="text-sm">
+                            <div class="font-semibold normalize-in-trigger">{{orderConfig.name}}</div>
+                            <div class="hide-from-trigger">{{n-a orderConfig.description}}</div>
+                        </div>
+                    </ModelSelect>
+                </div>
+            </div>
+        </div>
+    </Layout::Section::Header>
+    <Layout::Section::Body>
+        <Order::Kanban @orders={{@model}} @headerOffset={{160}} @orderConfig={{this.type}} />
+    </Layout::Section::Body>
+{{/if}}
+
+{{outlet}}

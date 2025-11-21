@@ -1,0 +1,8 @@
+<Layout::YieldSidebar>
+    <Layout::FleetOpsSidebar @controller={{this}} @onClickCreateOrder={{transition-to "operations.orders.index.new"}} />
+</Layout::YieldSidebar>
+
+<Layout::Section::Container>
+    {{outlet}}
+    <GlobalSearch />
+</Layout::Section::Container>

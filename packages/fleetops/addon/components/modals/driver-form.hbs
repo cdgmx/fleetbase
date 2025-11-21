@@ -1,0 +1,113 @@
+<Modal::Default @modalIsOpened={{@modalIsOpened}} @options={{@options}} @confirm={{@onConfirm}} @decline={{@onDecline}}>
+    <div class="modal-body-container">
+        <div class="flex">
+            <div class="w-32 mb-6 mr-6">
+                <Image
+                    src={{@options.driver.photo_url}}
+                    @fallbackSrc={{config "defaultValues.driverImage"}}
+                    alt={{@options.driver.name}}
+                    height="128"
+                    width="128"
+                    class="h-32 w-32 rounded-md"
+                />
+                <UploadButton @name={{t "common.photos"}} @accept="image/*" @onFileAdded={{@options.uploadNewPhoto}} class="w-32" />
+            </div>
+            <div class="flex-1">
+                <div class="grid grid-cols-1 gap-2 text-xs dark:text-gray-100">
+                    <div class="input-group">
+                        <label>
+                            {{t "common.name"}}
+                        </label>
+                        <Input @value={{@options.driver.name}} @type="text" class="w-full form-input" placeholder={{t "common.name"}} />
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 text-xs dark:text-gray-100">
+                    <div class="input-group">
+                        <label>
+                            {{t "common.internal-id"}}
+                        </label>
+                        <Input @value={{@options.driver.internal_id}} @type="text" class="w-full form-input" placeholder={{t "common.internal-id"}} />
+                    </div>
+
+                    <div class="input-group">
+                        <label>
+                            {{t "common.driver-license"}}
+                        </label>
+                        <Input @value={{@options.driver.drivers_license_number}} @type="text" class="w-full form-input" placeholder={{t "common.driver-license"}} />
+                    </div>
+
+                    <div class="input-group">
+                        <label>
+                            {{t "common.email"}}
+                        </label>
+                        <Input @value={{@options.driver.email}} @type="text" class="w-full form-input" placeholder={{t "common.email"}} />
+                    </div>
+
+                    <div class="input-group">
+                        <label>
+                            {{t "common.phone"}}
+                        </label>
+                        <PhoneInput @value={{@options.driver.phone}} @onInput={{fn (mut @options.driver.phone)}} class="form-input w-full" />
+                    </div>
+
+                    <div class="input-group">
+                        <label>
+                            {{t "common.vendor"}}
+                        </label>
+                        <ModelSelect
+                            @modelName="vendor"
+                            @selectedModel={{@options.driver.vendor}}
+                            @placeholder={{t "modals.driver-form.select-vendor"}}
+                            @triggerClass="form-select form-input"
+                            @infiniteScroll={{false}}
+                            @renderInPlace={{true}}
+                            @onChange={{fn (mut @options.driver.vendor)}}
+                            as |model|
+                        >
+                            {{model.name}}
+                        </ModelSelect>
+                    </div>
+
+                    <div class="input-group">
+                        <label>
+                            {{t "common.vehicle"}}
+                        </label>
+                        <ModelSelect
+                            @modelName="vehicle"
+                            @selectedModel={{@options.driver.vehicle}}
+                            @placeholder={{t "modals.driver-form.select-vehicle"}}
+                            @triggerClass="form-select form-input"
+                            @infiniteScroll={{false}}
+                            @renderInPlace={{true}}
+                            @onChange={{fn (mut @options.driver.vehicle)}}
+                            as |model|
+                        >
+                            {{model.display_name}}
+                        </ModelSelect>
+                    </div>
+
+                    <div class="input-group">
+                        <label>
+                            {{t "common.city"}}
+                        </label>
+                        <Input @value={{@options.driver.city}} @type="text" class="w-full form-input" placeholder={{t "common.city"}} />
+                    </div>
+
+                    <div class="input-group">
+                        <label>
+                            {{t "common.country"}}
+                        </label>
+                        <CountrySelect
+                            class="w-full form-input form-select form-datalist"
+                            @value={{@options.driver.country}}
+                            @onChange={{fn (mut @options.driver.country)}}
+                            placeholder={{t "common.country"}}
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{yield}}
+</Modal::Default>

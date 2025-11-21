@@ -1,0 +1,15 @@
+<Layout::Resource::Panel
+    @resource={{this.order}}
+    @controller={{this}}
+    @actionButtons={{this.actionButtons}}
+    @headerTitle={{t "common.create-a-new-resource" resource=(lowercase (t "resource.order"))}}
+    @saveTask={{this.save}}
+    @saveDisabled={{this.orderValidation.isNotValid}}
+    @onPressCancel={{transition-to "operations.orders.index"}}
+    @onOverlayReady={{fn (mut this.overlay)}}
+    @width="530px"
+    @onOpen={{this.setup}}
+>
+    <Order::Form @resource={{this.order}} @controller={{this}} />
+    <Spacer @height="300px" />
+</Layout::Resource::Panel>
