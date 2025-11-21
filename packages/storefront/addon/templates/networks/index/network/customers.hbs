@@ -1,0 +1,16 @@
+<Layout::Section::Header @title={{t "storefront.common.customers"}} @searchQuery={{this.query}} @onSearch={{perform this.search}} />
+
+<Layout::Section::Body>
+    <Table
+        @wrapperClass="overscroll-y-none"
+        @rows={{@model}}
+        @columns={{this.columns}}
+        @selectable={{false}}
+        @canSelectAll={{false}}
+        @onSetup={{fn (mut this.table)}}
+        @pagination={{true}}
+        @paginationMeta={{@model.meta}}
+        @page={{this.page}}
+        @onPageChange={{fn (mut this.page)}}
+    />
+</Layout::Section::Body>

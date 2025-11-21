@@ -1,0 +1,47 @@
+<SettingsContainer>
+    <form>
+        <div class="space-y-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div>
+                    <h1 class="text-lg leading-6 font-bold text-gray-900 dark:text-gray-100">
+                        {{t "storefront.settings.locations.location-setting"}}
+                    </h1>
+                    <p class="mt-1 text-sm text-gray-500">
+                        {{t "storefront.settings.locations.manage-store"}}
+                    </p>
+                </div>
+                <div>
+                    <Button
+                        @wrapperClass="flex-shrink-0"
+                        @icon="plus"
+                        @iconPrefix="fas"
+                        @type="primary"
+                        @text={{t "storefront.settings.locations.text-location"}}
+                        @onClick={{this.createNewLocation}}
+                    />
+                </div>
+            </div>
+
+            {{#each @model as |storeLocation|}}
+                <ContentPanel @title={{storeLocation.name}} @open={{true}} @pad={{false}} @wrapperClass="bordered-classic">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h4 class="text-sm tracking-wide uppercase text-gray-700 dark:text-gray-400 font-semibold">{{t "storefront.settings.locations.store-hour"}}</h4>
+                        </div>
+                        <div class="flex items-center">
+                            <Button @icon="edit" @text={{t "storefront.common.edit"}} @onClick={{fn this.editStoreLocation storeLocation}} @wrapperClass="mr-2" />
+                            <Button @icon="trash" @type="danger" @text={{t "storefront.common.delete"}} @onClick={{fn this.removeStoreLocation storeLocation}} />
+                        </div>
+                    </div>
+                    <div class="mb-6 uppercase dark:text-gray-100">
+                        {{storeLocation.address}}
+                    </div>
+                    <div>
+                        <ScheduleManager @subject={{storeLocation}} @subjectKey="store_location_uuid" @hourModelType="store-hour" class="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-2" />
+                    </div>
+                </ContentPanel>
+            {{/each}}
+        </div>
+    </form>
+    <Spacer @height="300px" />
+</SettingsContainer>

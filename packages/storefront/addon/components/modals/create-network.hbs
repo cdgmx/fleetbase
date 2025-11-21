@@ -1,0 +1,28 @@
+<Modal::Default @modalIsOpened={{@modalIsOpened}} @options={{@options}} @confirm={{@onConfirm}} @decline={{@onDecline}}>
+    <div class="modal-body-container">
+        <div class="flex flex-col items-center justify-center mb-2">
+            <FaIcon @icon="network-wired" @size="4x" class="text-sky-400" />
+            <div class="my-2 text-center">
+                <h2 class="dark:text-gray-50 font-semibold">{{t "storefront.component.modals.create-network.title"}}</h2>
+                <p class="my-2 px-6 dark:text-gray-100">
+                    {{t "storefront.component.modals.create-network.message-line1"}}
+                    {{t "storefront.component.modals.create-network.message-line2"}}
+                    {{t "storefront.component.modals.create-network.message-line3"}}
+                </p>
+            </div>
+        </div>
+        <InputGroup @name={{t "storefront.component.modals.create-network.name"}} @value={{@options.network.name}} @helpText={{t "storefront.component.modals.create-network.name-text"}} />
+        <InputGroup
+            @name={{t "storefront.component.modals.create-network.description"}}
+            @value={{@options.network.description}}
+            @helpText={{t "storefront.component.modals.create-network.description-text"}}
+        />
+        <InputGroup
+            @name={{t "storefront.component.modals.create-network.currency"}}
+            @value={{@options.network.currency}}
+            @helpText={{t "storefront.component.modals.create-network.currency-text"}}
+        >
+            <CurrencySelect @currency={{@options.network.currency}} @onCurrencyChange={{fn (mut @options.network.currency)}} @triggerClass="w-full form-select" />
+        </InputGroup>
+    </div>
+</Modal::Default>

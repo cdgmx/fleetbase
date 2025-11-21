@@ -1,0 +1,40 @@
+<Modal::Default @modalIsOpened={{@modalIsOpened}} @options={{@options}} @confirm={{@onConfirm}} @decline={{@onDecline}}>
+    <div class="modal-body-container">
+        <div class="flex flex-col items-center justify-center mb-2">
+            <FaIcon @icon="stars" @size="4x" class="text-sky-400" />
+            <div class="my-2 text-center">
+                <h2 class="dark:text-gray-100 font-semibold">{{t "storefront.component.modals.create-first-store.title"}}</h2>
+                <p class="my-2 px-6 dark:text-gray-100">
+                    {{t "storefront.component.modals.create-first-store.message"}}
+                    {{t "storefront.component.modals.create-first-store.submit-message"}}
+                </p>
+            </div>
+        </div>
+        <div>
+            <InputGroup
+                @name={{t "storefront.component.modals.create-first-store.storefront-name"}}
+                @value={{@options.store.name}}
+                @helpText={{t "storefront.component.modals.create-first-store.enter-name"}}
+                @disabled={{cannot "storefront create store"}}
+            />
+            <InputGroup
+                @name={{t "storefront.component.modals.create-first-store.description"}}
+                @value={{@options.store.description}}
+                @helpText={{t "storefront.component.modals.create-first-store.brief-description"}}
+                @disabled={{cannot "storefront create store"}}
+            />
+            <InputGroup
+                @name={{t "storefront.component.modals.create-first-store.currency"}}
+                @value={{@options.store.currency}}
+                @helpText={{t "storefront.component.modals.create-first-store.select-currency"}}
+            >
+                <CurrencySelect
+                    @currency={{@options.store.currency}}
+                    @onCurrencyChange={{fn (mut @options.store.currency)}}
+                    @triggerClass="w-full form-select"
+                    @disabled={{cannot "storefront create store"}}
+                />
+            </InputGroup>
+        </div>
+    </div>
+</Modal::Default>

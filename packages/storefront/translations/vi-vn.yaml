@@ -1,0 +1,722 @@
+storefront:
+  extension-name: Storefront
+  common:
+    address: Địa chỉ
+    alerts: Cảnh báo
+    amount: Số tiền
+    api: API
+    back: Quay lại
+    backdrop: phông nền
+    building: Tòa nhà
+    bulk-action: Hành động hàng loạt
+    cash: Tiền mặt
+    city: Thành phố
+    config: Cấu hình
+    coordinates: Tọa độ
+    country: Quốc gia
+    created: Đã tạo
+    currency: Tiền tệ
+    customer: Khách hàng
+    customers: Khách hàng
+    category: Danh mục
+    delivery-tip: Tiền boa giao hàng
+    delivery: Giao hàng
+    details: Chi tiết
+    description: Mô tả
+    driver: Tài xế
+    dropoff: Giao hàng
+    earning: Thu nhập
+    email: Email
+    export: Xuất khẩu
+    id: ID
+    internal-id: ID nội bộ
+    import: Nhập khẩu
+    invalid: Không hợp lệ
+    loading: Đang tải...
+    logo: logo
+    name: Tên
+    neighborhood: Khu vực
+    online: Trực tuyến
+    orders: Đơn hàng
+    phone: Điện thoại
+    photos: Ảnh
+    pickup: Nhận hàng
+    product: Sản phẩm
+    remove: Xóa
+    state: Tiểu bang
+    status: Trạng thái
+    store: Cửa hàng
+    street-1: Đường 1
+    storefront: Mặt tiền cửa hàng
+    tag: Thẻ
+    tip: Tiền boa
+    title: Tiêu đề
+    total: Tổng
+    type: Loại
+    upload-new: Tải lên mới
+    uploading: Đang tải lên...
+    view: Xem
+    website: Trang web
+    edit: Chỉnh sửa
+    delete: Xóa
+    network: Mạng
+    file: tệp
+    general: Chung
+    location: Vị trí
+    notification: Thông báo
+    gateways: Cổng thanh toán
+    settings: Cài đặt
+    new: Mới
+    facebook: Facebook
+    instagram: Instagram
+    twitter: Twitter
+    food-trucks: Xe bán đồ ăn
+    catalog: Danh mục
+    catalogs: Danh mục
+  sidebar:
+    storefront: Cửa hàng
+    dashboard: Bảng điều khiển
+    products: Sản phẩm
+    catalogs: Danh mục
+    food-trucks: Xe bán đồ ăn
+    customers: Khách hàng
+    orders: Đơn hàng
+    networks: Mạng
+    settings: Cài đặt
+    launch-app: Khởi chạy ứng dụng
+  component:
+    storefront-order-summary:
+      order-summary-title: Tóm tắt đơn hàng cửa hàng
+    modals:
+      add-store-hours:
+        start-time: Thời gian bắt đầu
+        operation-start: Khi bắt đầu thời gian hoạt động/sẵn sàng
+        end-time: Thời gian kết thúc
+        operation-end: Khi kết thúc thời gian hoạt động/sẵn sàng
+      assign-driver:
+        message-driver: Chọn tài xế để giao đơn hàng này.
+        name-driver: Chọn tài xế
+        placeholder-driver: Chọn tài xế để giao
+      create-first-store:
+        title: Chào mừng đến với Cửa hàng!
+        message: Cửa hàng cho phép bạn nhanh chóng thiết lập một cửa hàng không giao
+          diện và động theo yêu cầu được hỗ trợ bởi Fleetbase.
+        submit-message: Gửi biểu mẫu dưới đây để tạo cửa hàng đầu tiên của bạn.
+        storefront-name: Tên cửa hàng
+        enter-name: Nhập tên cửa hàng của bạn
+        description: Mô tả cửa hàng
+        brief-description: Đưa ra mô tả ngắn gọn về loại sản phẩm được bán tại cửa
+          hàng
+        currency: Tiền tệ cửa hàng
+        select-currency: Chọn tiền tệ mặc định cho cửa hàng của bạn
+      create-getaway:
+        getaway: Loại cổng thanh toán
+        getaway-text: Chọn loại cổng thanh toán
+        getaway-name: Tên cổng thanh toán
+        name-text: Đặt tên cho cổng thanh toán của bạn, điều này chỉ liên quan đến
+          nội bộ
+        getaway-code: Mã cổng thanh toán
+        code-text: Mã định danh dùng để nhận dạng cổng thanh toán với SDK
+        callback-url: URL phản hồi
+        callback-text: URL phản hồi nếu có
+        return-url: URL trả về
+        return-text: URL trả về nếu có
+        sandbox-getaway: Đây là cổng thanh toán thử nghiệm
+      create-network-category:
+        parent-category: Danh mục cha
+        select-parent: Chọn danh mục cha nếu có
+        category-name: Tên danh mục
+        name-text: Nhập tên cho danh mục
+        description: Mô tả danh mục
+        description-text: Đưa ra mô tả ngắn gọn cho danh mục mạng lưới của bạn
+        category-icon: Loại biểu tượng danh mục
+      create-network:
+        title: Bắt đầu một mạng lưới
+        message-line1: Storefront cho phép bạn nhanh chóng tạo các thị trường, cho
+          phép nhiều cửa hàng bán hàng dưới cùng một mái nhà.
+        message-line2: Khi bạn tạo mạng lưới, bạn đã định nghĩa các quy tắc và có
+          thể mở rộng mạng lưới thông qua lời mời.
+        message-line3: Bắt đầu bằng cách tạo một mạng lưới bên dưới.
+        name: Tên mạng lưới
+        name-text: Nhập tên cửa hàng của bạn
+        description: Mô tả mạng lưới
+        description-text: Đưa ra mô tả ngắn gọn về các loại mặt hàng được bán trong
+          cửa hàng của bạn
+        currency: Tiền tệ mạng lưới
+        currency-text: Chọn tiền tệ mặc định cho cửa hàng của bạn
+      create-new-variant:
+        name: Tên biến thể
+        name-text: Đặt tên cho biến thể sản phẩm của bạn
+        description: Mô tả biến thể
+        description-text: Mô tả ngắn về biến thể
+        checkbox-1: Cho phép người dùng chọn nhiều tùy chọn biến thể cùng lúc
+        checkbox-2: Việc chọn biến thể sản phẩm này là bắt buộc
+      create-notification-channel:
+        title: Kênh
+        title-text: Chọn kênh thông báo
+        name: Tên kênh
+        name-text: Đặt tên cho kênh thông báo của bạn, điều này chỉ liên quan đến
+          nội bộ
+        key: Khóa kênh
+        key-text: Đây là khóa kênh thông báo của bạn, sử dụng nó để chỉ định các ứng
+          dụng nên sử dụng kênh thông báo này qua cấu hình sdk.
+      create-product-category:
+        name: Tên danh mục
+        name-text: Nhập tên cho danh mục
+        description: Mô tả danh mục
+        description-text: Đưa ra mô tả ngắn gọn cho danh mục sản phẩm của bạn
+        icon: Biểu tượng danh mục
+        uploading-new: Tải lên biểu tượng danh mục mới
+      create-store:
+        name: Tên cửa hàng
+        name-text: Nhập tên cửa hàng của bạn
+        description: Mô tả cửa hàng
+        description-text: Đưa ra mô tả ngắn gọn về các loại mặt hàng được bán trong
+          cửa hàng của bạn
+        currency: Tiền tệ cửa hàng
+        currency-text: Chọn tiền tệ mặc định cho cửa hàng của bạn
+      import-products:
+        uploading-message: Đang xử lý nhập khẩu...
+        drop-upload: Thả để tải lên
+        ready-upload: sẵn sàng để tải lên.
+        upload-spreadsheets: Tải lên bảng tính
+        drag-drop: Kéo và thả các tệp bảng tính vào khu vực thả này
+        select-spreadsheets: hoặc chọn bảng tính để tải lên.
+        upload-queue: Hàng đợi tải lên
+        optionally-select-category: Tùy chọn chọn danh mục để nhập sản phẩm vào
+        select-category: Chọn danh mục
+      incoming-order:
+        assigned: Đã gán tài xế
+        not-assigned: Chưa gán tài xế
+        no-phone: Không có số điện thoại
+        change-driver: Thay đổi tài xế
+        assign-driver: Gán tài xế
+        pickup-order: Khách hàng phải đến lấy đơn hàng từ
+        address: Địa chỉ khách hàng
+        tracking: Theo dõi
+        summary: Tóm tắt đơn hàng
+        subtotal: Tổng phụ
+        fee: Phí giao hàng
+        tip: Tiền boa
+        delivery-tip: Tiền boa giao hàng
+      manage-addons:
+        title: Danh mục mới
+        delete: Xóa danh mục
+        new-addon: Phụ kiện mới
+        addon-name: Tên phụ kiện
+        description: Mô tả phụ kiện
+        delete-this-addon-category-assosiated-will-lost: Bạn có chắc muốn xóa danh
+          mục phụ kiện này không? Tất cả phụ kiện liên quan sẽ bị mất!
+        untitled-addon-category: Danh mục phụ kiện chưa đặt tên
+      order-ready-assign-driver:
+        driver-dispatch: Bạn sắp đặt đơn hàng này là sẵn sàng và phân phối, sử dụng
+          menu thả xuống bên dưới để chọn tài xế để phân phối. <br><br>Hoặc bạn có
+          thể chọn phân phối đơn hàng theo cách linh hoạt sẽ gửi đơn hàng đến tất
+          cả các tài xế gần đó để chấp nhận.
+        adhoc-dispatch-nearby-drivers: Phân phối linh hoạt đến các tài xế gần đó
+        select-driver: Chọn tài xế
+        select-driver-to-assign: Chọn tài xế để gán
+      share-network:
+        invite-member: Mời thành viên vào mạng lưới của bạn
+        email-below: Lấy liên kết mời chia sẻ hoặc gửi lời mời riêng qua email bên
+          dưới.
+        invite-network: Nhập email của người hoặc tổ chức bạn muốn gửi lời mời vào
+          mạng lưới của bạn.
+        add-email: Thêm email
+        get-link: Lấy liên kết
+        enable-shareable-link: Bật liên kết chia sẻ
+        anyone-with-this-link-able-to-join-your-network: Bất kỳ ai có liên kết này
+          đều có thể tham gia mạng lưới của bạn
+      store-form:
+        storefront-name: Tên cửa hàng
+        the-name-of-your-store: Tên cửa hàng của bạn.
+        storefront-description-placeholder: Mô tả cửa hàng
+        give-your-store-brief-description: Hãy cho cửa hàng bạn một mô tả ngắn gọn
+          để người dùng biết bạn bán gì.
+        add-tags-placeholder: Thêm thẻ
+      store-location-form:
+        street-2: Đường 2
+        security-access-code: Mã truy cập bảo mật
+        postal-code: Mã bưu điện
+    widget:
+      key-metrics:
+        title: Chỉ số cửa hàng
+      customers:
+        widget-title: Khách hàng gần đây
+        phone: Điện thoại
+        email: Email
+      orders:
+        widget-title: Đơn hàng gần đây
+        id-column: Mã đơn hàng
+        cancel-order: Hủy đơn hàng
+        accept-order: Chấp nhận đơn hàng!
+        mark-as-ready: Đánh dấu là sẵn sàng!
+        dispatch: Giao hàng
+        mark-as-preparing: Đánh dấu đang chuẩn bị
+        mark-as-completed: Đánh dấu đã hoàn thành
+        more-details: Chi tiết thêm
+        customer: Khách hàng
+        driver: Tài xế
+        subtotal: Tổng phụ
+        delivery-fee: Phí giao hàng
+        delivery-tip: Tiền tip giao hàng
+        tip: Tiền tip
+        total: Tổng cộng
+        change-driver: Thay đổi tài xế
+        assign-driver: Chỉ định tài xế
+        customer-pickup: Khách hàng lấy hàng
+        pickup-order: Lấy đơn hàng
+        mark-as-ready-modal-pickup-title: Đánh dấu đơn hàng đã sẵn sàng để lấy?
+        mark-as-ready-modal-pickup-body: Đánh dấu đơn hàng là sẵn sàng sẽ thông báo
+          cho khách hàng rằng đơn hàng đã sẵn sàng để lấy!
+        mark-as-ready-modal-pickup-accept-button-text: Sẵn sàng để lấy!
+        mark-as-ready-modal-not-adhoc-title: Chỉ định tài xế và giao đơn hàng
+        mark-as-ready-modal-not-adhoc-accept-button-text: Chỉ định & Giao!
+        mark-as-ready-modal-title: Bạn có muốn đánh dấu đơn hàng là sẵn sàng?
+        mark-as-ready-modal-body: Đánh dấu đơn hàng là sẵn sàng sẽ gửi đơn hàng đến
+          các tài xế gần đó, chỉ đánh dấu đơn hàng là sẵn sàng khi nó có thể được
+          lấy.
+        mark-as-ready-modal-accept-button-text: Giao!
+        mark-as-completed-modal-title: Bạn có chắc muốn đánh dấu đơn hàng là đã hoàn
+          thành?
+        mark-as-completed-modal-body: Đánh dấu đơn hàng là đã hoàn thành là xác nhận
+          rằng khách hàng đã lấy đơn hàng và đơn hàng đã hoàn tất.
+        mark-as-completed-accept-button-text: Đơn hàng đã hoàn thành!
+        mark-as-preparing-modal-title: Bạn có chắc muốn đánh dấu đơn hàng là đang
+          chuẩn bị?
+        mark-as-preparing-modal-body: Đánh dấu đơn hàng là đang chuẩn bị là xác nhận
+          rằng đơn hàng đang được chuẩn bị.
+        mark-as-preparing-accept-button-text: Đơn hàng đang chuẩn bị
+        assign-driver-modal-title: Chỉ định tài xế
+        assign-driver-modal-accept-button-text: Chỉ định tài xế
+      storefront-metrics:
+        last-day: 30 ngày qua
+    file-record:
+      delete-this-file: Bạn có chắc muốn xóa tệp này không?
+      delete-this-file-you-will-unable-recover: Khi bạn xóa tệp này, bạn sẽ không
+        thể khôi phục lại nó.
+    network-category-picker:
+      no-subcategory: Không có danh mục con cho
+      no-categories: Không có danh mục cho mạng này
+      create-category: Tạo danh mục mới
+    schedule-manager:
+      add-hours: Thêm giờ
+      add-new-hours-for-day: Thêm giờ mới cho {day}
+      new-hours-added-for-day: Đã thêm giờ mới cho {day}
+      you-wish-to-remove-these-hour: Bạn có chắc muốn xóa những giờ này không?
+      by-removing-these-operation: Bằng cách loại bỏ các giờ hoạt động/sẵn có này,
+        cửa hàng hoặc sản phẩm của bạn có thể trở nên không hoạt động hoặc không khả
+        dụng theo lịch trình cập nhật...
+    store-selector:
+      no-stores: Không có cửa hàng để chọn
+      create-storefront: Tạo mới
+  home:
+    title: Bảng điều khiển Storefront
+  customers:
+    index:
+      internal-id: ID nội bộ
+      create-at: Ngày tạo
+      update-at: Ngày cập nhật
+      vendor-action: Hành động của nhà cung cấp
+      view-customer-details: Xem chi tiết khách hàng
+      edit-customer: Chỉnh sửa khách hàng
+      success-message: Mạng storefront mới của bạn đã được tạo!
+      delete-customer: Xóa khách hàng
+    customer-panel:
+      details:
+        web-url: URL trang web
+      edit-button: Chỉnh sửa khách hàng
+      cancel-edit-button: Hủy chỉnh sửa khách hàng
+      cancel-new-button: Hủy khách hàng mới
+  networks:
+    index:
+      network-option: Tùy chọn mạng
+      manage-network: Quản lý mạng
+      send-invite: Gửi lời mời
+      delete-network: Xóa mạng
+      create-new-network: Tạo mạng mới
+      success-message: Mạng storefront mới của bạn đã được tạo!
+      delete-this-network-all-assigned-stores-customer-order: Bạn có chắc chắn muốn
+        xóa mạng này ({networkName}) không? Tất cả cửa hàng, khách hàng, đơn hàng
+        được gán sẽ không còn truy cập được.
+      network:
+        manage-network: Quản lý mạng
+        settings: Cài đặt
+        customers: Khách hàng
+        orders: Đơn hàng
+        Network-changes-not-save: Thay đổi mạng chưa được lưu!
+        going-back-will-rollback-all-unsaved-changes: Quay lại sẽ hoàn tác tất cả
+          các thay đổi chưa lưu, bạn có chắc muốn tiếp tục không?
+        index:
+          change-network-saved: Thay đổi mạng đã được lưu.
+          create-new-payment-gateway: Tạo cổng thanh toán mới
+          save-gateway: Lưu cổng thanh toán
+          new-gateway-add-network: Cổng thanh toán mới đã được thêm vào mạng
+          payment-gateway-changes-success: Thay đổi cổng thanh toán đã được lưu!
+          create-new-notification-channel: Tạo kênh thông báo mới
+          create-notification-channel: Tạo kênh thông báo
+          notification-channel-add-network: Kênh thông báo mới đã được thêm vào mạng!
+          notification-channel-changes-save: Thay đổi kênh thông báo đã được lưu!
+          general-network-settings-title: Cài đặt chung của mạng
+          general-network-settings-subtitle: Cung cấp các cài đặt chung cho mạng hoặc
+            thị trường của bạn.
+          general-network-settings-form:
+            save-changes-button-text: Lưu thay đổi
+            name: Tên
+            name-placeholder: Tên Storefront
+            name-help-text: Tên của mạng hoặc thị trường của bạn.
+            description: Mô tả
+            description-placeholder: Mô tả Storefront
+            description-help-text: Hãy cho cửa hàng của bạn một mô tả ngắn để người
+              dùng biết mạng của bạn là gì.
+            currency: Tiền tệ
+            contact-social-panel:
+              panel-title: Liên hệ & Mạng xã hội
+              phone: Điện thoại
+              email: Email
+              email-help-text: Email doanh nghiệp của bạn.
+              website: Trang web
+              website-help-text: URL trang web doanh nghiệp của bạn.
+              facebook: Facebook
+              facebook-help-text: ID trang Facebook doanh nghiệp của bạn.
+              instagram: Instagram
+              instagram-help-text: Tên người dùng Instagram của doanh nghiệp bạn.
+              twitter: Twitter
+              twitter-help-text: Tên người dùng Twitter của doanh nghiệp bạn.
+            logo-backdrop-panel:
+              panel-title: Logo & Phông nền
+              logo-label: Logo
+              logo-help-text: Logo cho cửa hàng của bạn.
+              upload-logo-button-text: Tải lên logo mới
+              backdrop-label: Phông nền
+              backdrop-help-text: Banner hoặc hình nền tùy chọn cho cửa hàng của bạn.
+              upload-backdrop-button-text: Tải lên phông nền mới
+            alert-panel:
+              panel-title: Cảnh báo
+              panel-description: Cấu hình ai sẽ nhận cảnh báo cho các sự kiện nhất
+                định
+              new-order-alert-label: Cảnh báo đơn hàng mới
+              new-order-alert-placeholder: Chọn người dùng để cảnh báo khi có đơn
+                hàng mới
+            config-switches:
+              online: Trực tuyến
+              enable-tax: Bật thuế
+              tax-percentage-input-label: Phần trăm thuế
+              tax-percentage-input-help-text: Phần trăm thuế bán hàng áp dụng cho
+                đơn hàng.
+              auto-accept-incoming-orders: Tự động chấp nhận đơn hàng đến
+              auto-dispatch-orders: Tự động giao đơn hàng
+              require-proof-of-delivery: Yêu cầu bằng chứng giao hàng
+              proof-of-delivery-method-label: Phương thức bằng chứng giao hàng
+              enable-cash-on-delivery: Bật thanh toán khi nhận hàng
+              enable-order-pickup: Bật lấy hàng tại cửa hàng
+              enable-tips: Bật tiền boa
+              enable-delivery-tips: Bật tiền boa cho giao hàng
+              enable-multi-cart-checkout: Bật thanh toán nhiều giỏ hàng
+              enable-user-reviews: Bật đánh giá người dùng
+          api-panel:
+            panel-title: API
+            panel-header: Cài đặt API
+            panel-description: Khóa truy cập cho Storefront API & Tích hợp
+            network-key-label: Khóa mạng
+            network-key-help-text: Đây là khóa mạng của bạn, sử dụng để kích hoạt
+              ứng dụng và tích hợp cho mạng của bạn.
+          payment-gateways-panel:
+            panel-title: Cài đặt cổng thanh toán
+            panel-description: Thêm hoặc quản lý cài đặt cổng thanh toán của bạn tại
+              đây.
+            new-gateway-button-text: Tạo cổng thanh toán mới
+            gateway-form:
+              name: Tên cổng thanh toán
+              name-help-text: Đặt tên cho cổng thanh toán, chỉ có ý nghĩa nội bộ
+              code: Mã cổng thanh toán
+              code-help-text: Mã định danh dùng để nhận dạng cổng thanh toán với SDK
+              callback-url: URL phản hồi
+              callback-url-help-text: URL phản hồi nếu có
+              return-url: URL trả về
+              return-url-help-text: URL trả về nếu có
+              sandbox-toggle-label: Đây là cổng thanh toán thử nghiệm
+              config-header-label: Cấu hình
+              delete-gateway-button-text: Xóa cổng thanh toán
+          notification-channels-panel:
+            panel-title: Kênh Thông Báo
+            panel-header: Cài Đặt Thông Báo
+            panel-description: Cấu hình các kênh thông báo cho cửa hàng của bạn, mỗi
+              kênh thông báo có thể có các quy tắc và tùy chọn riêng.
+            new-channel-button-text: Tạo kênh mới
+        stores:
+          store: Cửa hàng
+          add-stores-button-text: Thêm Cửa Hàng
+          invite-stores-button-text: Mời Cửa Hàng
+          created-at: Ngày Tạo
+          view-store-details: Xem Chi Tiết Cửa Hàng
+          edit-store: Chỉnh Sửa Cửa Hàng
+          assign-category: Gán Danh Mục
+          remove-category: Xóa Danh Mục
+          remove-store-from-network: Xóa Cửa Hàng khỏi Mạng
+          delete-network-category: Xóa danh mục mạng?
+          deleting-category-move-all-stores-inside-on-top-level: Xóa danh mục này
+            sẽ chuyển tất cả cửa hàng bên trong lên cấp cao nhất, bạn có chắc muốn
+            xóa danh mục này không?
+          add-store-to-category: Thêm cửa hàng vào danh mục
+          save-change: Lưu Thay Đổi
+          add-new-network-category: Thêm danh mục mạng mới
+          create-new-category: Tạo danh mục mới
+          new-category-created: Danh mục mới đã được tạo.
+          network-category-create: Danh mục mạng mới đã được tạo.
+          edit-category: Chỉnh sửa danh mục ({categoryName})
+          add-stores-to-network: Thêm cửa hàng vào mạng
+          network-stores-update: Cửa hàng mạng đã được cập nhật.
+          remove-this-store: Xóa cửa hàng này ({storeName}) khỏi mạng này ({networkName})?
+          done: Xong
+          longer-findable-by-this-network: Bạn có chắc muốn xóa cửa hàng này khỏi
+            mạng này không? Nó sẽ không còn được tìm thấy bởi mạng này nữa.
+          viewing-storefront: Đang xem cửa hàng {storeName}
+          editing-storefront: Đang chỉnh sửa cửa hàng {storeName}
+          send-invitations: Gửi Lời Mời
+          invitation-sent-recipients: Lời mời đã được gửi đến người nhận!
+          invalid-emails-provided-error: Đã cung cấp email không hợp lệ!
+          remove-store-category: Xóa danh mục cửa hàng
+          remove-store-category-body: Bạn sắp xóa {storeName} khỏi danh mục {categoryName},
+            bạn có muốn tiếp tục không?
+  orders:
+    index:
+      internal-id: ID Nội Bộ
+      customer: Khách Hàng
+      select-order-customer: Chọn khách hàng đơn hàng
+      select-order-pickup-location: Chọn địa điểm lấy hàng đơn hàng
+      select-order-dropoff-location: Chọn địa điểm giao hàng đơn hàng
+      scheduled-at: Lên lịch lúc
+      transaction-total: Tổng giao dịch
+      total: Tổng cộng
+      tracking-number: Số theo dõi
+      driver-assigned: Tài xế đã được phân công
+      select-driver-for-order: Chọn tài xế cho đơn hàng
+      created-at: Ngày tạo
+      updated-at: Cập nhật lúc
+      created-by: Tạo bởi
+      updated-by: Cập nhật bởi
+      select-user: Chọn người dùng
+      view-order: Xem Đơn hàng
+      cancel-order: Hủy Đơn hàng
+      delete-order: Xóa Đơn hàng
+      view:
+        route-panel-title: Lộ trình
+        comments-title: Bình luận
+        notes-title: Ghi chú
+        dispatch: Giao hàng
+        unassign-driver: Bỏ chỉ định Tài xế
+        assign-driver: Chỉ định Tài xế
+        cancel-order: Hủy Đơn hàng
+        delete-order: Xóa Đơn hàng
+        activity: Hoạt động
+        unable-load-order-activity: Không thể tải hoạt động đơn hàng
+        ad-hoc: Tùy ý
+        customer: Khách hàng
+        facilitator: Người điều phối
+        driver-assigned: Tài xế đã được chỉ định
+        change-driver: Thay đổi Tài xế
+        tracking-number: Số theo dõi
+        date-scheduled: Ngày lên lịch
+        date-dispatched: Ngày giao hàng
+        date-started: Ngày bắt đầu
+        order-details-title: Chi tiết Đơn hàng
+        route: Lộ trình
+        pickup: Lấy hàng
+        dropoff: Giao hàng
+        return: Trả hàng
+        order-summary: Tóm tắt Đơn hàng
+        subtotal: Tổng phụ
+        delivery-fee: Phí giao hàng
+        tip: Tiền boa
+        delivery-tip: Tiền boa giao hàng
+        total: Tổng cộng
+        payload: Tải trọng
+        items-drop: Giao hàng tại
+        tracking: Theo dõi
+        view-activity: Xem Hoạt động
+        order-metadata: Siêu dữ liệu Đơn hàng
+        unassign-title: Bạn có chắc muốn bỏ chỉ định tài xế ({driverName}) khỏi đơn
+          hàng này không?
+        unassign-body: Khi tài xế bị bỏ chỉ định, tài xế sẽ không còn quyền truy cập
+          vào chi tiết đơn hàng này.
+        unassign-success: Tài xế đã được bỏ chỉ định khỏi đơn hàng này.
+        route-error: Tối ưu hóa lộ trình thất bại, kiểm tra lại lộ trình và thử lại.
+        invalid-warning: Nhập trạng thái tùy chỉnh không hợp lệ.
+        change-order: Thay đổi tài xế đơn hàng
+        assign-order: Chỉ định tài xế cho đơn hàng
+        assign-success: '{orderId} đã cập nhật tài xế được chỉ định.'
+        order-title: Nhãn Đơn Hàng
+        waypoint-title: Nhãn Điểm Dừng
+        proof-of-delivery: Bằng Chứng Giao Hàng
+        notes-placeholder: Nhập ghi chú đơn hàng ở đây....
+        save-order-note: Lưu Ghi Chú Đơn Hàng
+        order-notes-updated: Ghi chú đơn hàng đã được cập nhật.
+  products:
+    index:
+      manage-addons: Quản Lý Tiện Ích Bổ Sung
+      manage-addons-dialog:
+        manage-addons-title: Quản Lý Danh Mục & Tùy Chọn Tiện Ích Bổ Sung Sản Phẩm
+        manage-addons-accept-button: Lưu Thay Đổi
+      done: Xong
+      create-new-product-category: Tạo danh mục sản phẩm mới
+      product-category-created-success: Danh mục sản phẩm mới đã được tạo.
+      import-products-via-spreadsheets: Nhập sản phẩm qua bảng tính
+      start-upload: Bắt Đầu Tải Lên
+      warning-no-file-upload: Không có tệp nào trong hàng đợi để tải lên!
+      products-success-message: Đã nhập thành công {resultsLength} sản phẩm...
+      delete-product: Bạn có chắc chắn muốn xóa sản phẩm này không?
+      body-warning: Cảnh báo! Khi sản phẩm này bị xóa, nó sẽ không còn truy cập được
+        nữa.
+      aside-scroller:
+        title: Danh Mục Sản Phẩm
+        custom-top-item-text: Tất Cả Sản Phẩm
+      import-products-success-message: Đã nhập thành công {resultsLength} sản phẩm...
+      edit:
+        title: Sản phẩm chưa được lưu!
+        body: Bạn sẽ mất tất cả các thay đổi chưa lưu, bạn có chắc muốn hủy không?
+        changes-saved: Đã lưu thay đổi!
+      new:
+        new-product-created-success: Sản phẩm mới đã được tạo thành công!
+        warning-only-select-an-image-file-to-be-primary: Bạn chỉ có thể chọn tệp hình
+          ảnh làm hình ảnh chính!
+        made-the-primary-success-image: '{fileName} đã được đặt làm hình ảnh chính.'
+        title: Sản phẩm chưa được lưu!
+        body: Quay lại sẽ hủy việc tạo sản phẩm này, nếu bạn tiếp tục tất cả các trường
+          nhập sẽ bị xóa!
+        select-addon-categories: Chọn danh mục tiện ích bổ sung
+        add-new-product-variant: Thêm biến thể sản phẩm mới
+        edit-product-variant: Chỉnh sửa biến thể sản phẩm
+        untitled-field: Trường chưa đặt tên
+      category:
+        category: danh mục
+        title: Sản phẩm chưa được lưu!
+        body: Cảnh báo! Xóa danh mục này cũng sẽ xóa tất cả các sản phẩm được liệt
+          kê dưới danh mục này.
+        edit-category: Chỉnh sửa danh mục
+        save-changes: Lưu Thay Đổi
+        category-changes-saved-success: Đã lưu thay đổi danh mục.
+        delete-product: Bạn có chắc chắn muốn xóa sản phẩm này không?
+        body-warning: Cảnh báo! Khi sản phẩm này bị xóa, nó sẽ không còn truy cập
+          được nữa.
+  settings:
+    api:
+      api-settings: Cài Đặt API
+      access-key-for-storefront-api-integrations: Khóa truy cập cho API Storefront
+        & các tích hợp.
+      store-key: Khóa Cửa Hàng
+      store-key-help-text: Đây là khóa cửa hàng của bạn, sử dụng nó để kích hoạt các
+        ứng dụng và tích hợp cho cửa hàng của bạn.
+    gateways:
+      geteway-settings: Cài Đặt Cổng Thanh Toán
+      add-or-manage-your-paymeny-gateway-settings-here: Thêm hoặc quản lý cài đặt
+        cổng thanh toán của bạn tại đây.
+      create-new-gateway: Tạo cổng mới
+      gateway-name: Tên cổng
+      gateway-help-text: Đặt tên cho cổng thanh toán của bạn, tên này chỉ có ý nghĩa
+        nội bộ
+      gateway-code: Mã cổng thanh toán
+      gateway-code-help-text: Mã định danh dùng để nhận dạng cổng thanh toán với SDK
+      callback-url: URL phản hồi
+      callback-url-help-text: URL phản hồi nếu có
+      return-url: URL trả về
+      return-url-help-text: URL trả về nếu có
+      this-is-a-sandbox-gateway: Đây là cổng thanh toán thử nghiệm
+      delete-payment-gateway: Xóa cổng thanh toán
+      create-new-payment-gateway: Tạo cổng thanh toán mới
+      save-gateway: Lưu cổng thanh toán
+      edit-payment-gateway: Chỉnh sửa cổng thanh toán
+      save-changes: Lưu thay đổi
+      title-remove: Bạn có chắc muốn xóa cổng thanh toán này không?
+      application-website-utilizing-gateway: Tất cả ứng dụng và trang web sử dụng
+        cổng thanh toán này trong cấu hình có thể bị gián đoạn nếu cổng thanh toán
+        không được thay thế trước đó
+    index:
+      general-settings-header: Cài đặt chung
+      general-settings-message: Cung cấp các cài đặt chung cho cửa hàng của bạn.
+      name-placeholder: Tên cửa hàng
+      name-help-text: Tên cửa hàng của bạn.
+      description-placeholder: Mô tả cửa hàng
+      description-help-text: Đưa ra mô tả ngắn gọn về cửa hàng để người dùng biết
+        bạn bán gì.
+      tags-placeholder: Thêm thẻ
+      contact-social: Liên hệ & Mạng xã hội
+      website-help-text: URL trang web doanh nghiệp của bạn.
+      facebook-placeholder: ID Facebook
+      facebook-help-text: ID trang Facebook doanh nghiệp của bạn.
+      instagram-placeholder: Tên người dùng Instagram
+      instagram-help-text: Tên người dùng Instagram của doanh nghiệp bạn.
+      twitter-placeholder: Tên người dùng Twitter
+      twitter-help-text: Tên người dùng Twitter của doanh nghiệp bạn.
+      logo-backdrop: Logo & Phông nền
+      logo-help-text: Logo cho cửa hàng của bạn.
+      upload-new-logo: Tải lên logo mới
+      backdrop-help-text: Ảnh banner hoặc nền tùy chọn cho cửa hàng của bạn.
+      upload-new-backdrop: Tải lên phông nền mới
+      images-videos: Hình ảnh & Video
+      drop-to-upload: Thả để tải lên
+      ready-to-upload: sẵn sàng để tải lên.
+      upload-image-video: Tải lên hình ảnh & video
+      drag-and-drop-image: Kéo và thả các tệp hình ảnh và video vào khu vực này
+      upload-queue: Hàng đợi tải lên
+      alerted-for-certain-event: Cấu hình ai sẽ nhận cảnh báo cho các sự kiện nhất
+        định.
+      new-order-alert: Cảnh báo đơn hàng mới
+      alert-placeholder: Chọn người dùng để cảnh báo khi có đơn hàng mới
+      enable-tax: Bật thuế
+      tax-percentage: Phần trăm thuế
+      tax-percentage-help-text: Phần trăm thuế bán hàng áp dụng cho đơn hàng.
+      auto-accept-incoming-order: Tự động chấp nhận đơn hàng đến
+      auto-dispatch-order: Tự động gửi đơn hàng
+      require-proof-of-delivery: Yêu cầu bằng chứng giao hàng
+      proof-of-delivery-method: Phương thức bằng chứng giao hàng
+      enable-cash-on-delivery: Bật thanh toán khi nhận hàng
+      enable-order-pickup: Bật nhận hàng tại cửa hàng
+      enable-tips: Bật tiền boa
+      enable-delivery-tips: Bật tiền boa cho giao hàng
+      enable-integrated-vendors: Bật nhà cung cấp tích hợp
+      save-changes: Lưu thay đổi
+    locations:
+      new-store-location: Vị trí cửa hàng mới
+      add-new-location: Thêm vị trí mới
+      edit-store-location: Chỉnh sửa vị trí cửa hàng
+      save-changes: Lưu thay đổi
+      remove-this-store-location: Bạn có chắc chắn muốn xóa vị trí cửa hàng này không?
+      solely-accosciated-location: Tất cả sản phẩm chỉ liên kết với vị trí này sẽ
+        không còn truy cập được.
+      new-store-hour: Thêm giờ mở cửa mới cho {day}
+      add-hours: Thêm giờ
+      store-hour-added: Đã thêm giờ mở cửa mới cho {day}
+      remove-these-hour: Bạn có chắc chắn muốn xóa những giờ này không?
+      update-schedule-location: Bằng cách xóa những giờ hoạt động này, cửa hàng của
+        bạn có thể trở nên không hoạt động theo lịch cập nhật cho vị trí này.
+      location-setting: Cài đặt vị trí
+      manage-store: Quản lý vị trí và giờ hoạt động của cửa hàng bạn
+      text-location: Tạo vị trí mới
+      store-hour: Quản lý giờ mở cửa
+    notification:
+      create-new-notification-channel: Tạo kênh thông báo mới
+      create-notification-channel: Tạo kênh thông báo
+      edit-notification-channel: Chỉnh sửa kênh thông báo
+      save-changes: Lưu thay đổi
+      new-notification-channel-added: Đã thêm kênh thông báo mới
+      remove-this-notification-channel: Bạn có chắc chắn muốn xóa kênh thông báo này
+        không?
+      application-websites-utillizing-channel: Tất cả ứng dụng và trang web sử dụng
+        kênh này trong cấu hình có thể bị gián đoạn nếu kênh không được thay thế trước
+        đó
+      notification-settings: Cài đặt thông báo
+      notification-storefront: Cấu hình các kênh thông báo cho cửa hàng của bạn, mỗi
+        kênh thông báo cũng có thể có các quy tắc và tùy chọn riêng.
+      new-channel: Kênh mới
+  service:
+    storefront:
+      new-incoming-order: Bạn có đơn hàng mới đến!
+      accept-order: Chấp nhận đơn hàng
+      decline-order: Từ chối đơn hàng
+      create-first-storefront: Tạo cửa hàng đầu tiên của bạn
+      storefront-has-been-create-success: Cửa hàng mới của bạn đã được tạo!
+      create-new-storefront: Tạo cửa hàng mới
+      storefront-create-success: Cửa hàng mới của bạn đã được tạo!
+  application:
+    launch-app: Khởi chạy ứng dụng
