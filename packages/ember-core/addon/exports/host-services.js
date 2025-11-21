@@ -1,0 +1,27 @@
+const hostServices = [
+    'store',
+    'session',
+    'current-user',
+    'fetch',
+    'socket',
+    'media',
+    'app-cache',
+    'url-search-params',
+    'modals-manager',
+    'resource-context-panel',
+    'custom-fields-registry',
+    'table-context',
+    'loader',
+    'filters',
+    'crud',
+    'notifications',
+    'fileQueue',
+    'sidebar',
+    'dashboard',
+    'universe',
+    'intl',
+    'abilities',
+    { hostRouter: 'router' },
+];
+
+export default hostServices;
